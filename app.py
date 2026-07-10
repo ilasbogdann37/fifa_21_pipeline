@@ -4,7 +4,7 @@ import duckdb
 import g4f
 
 
-st.set_page_config(page_title="FanDuel Sports Analytics Dashboard", layout="wide")
+st.set_page_config(page_title="Sports Analytics Dashboard", layout="wide")
 
 st.title("⚽ Sports Data Pipeline")
 st.subheader("Dashboard inteligent de analiză și rezumate automate bazate pe AI")
@@ -51,7 +51,7 @@ with tab1:
             with st.spinner("AI-ul analizează talentele..."):
                 tabel_text = gems_df.to_markdown(index=False)
                 prompt = f"""
-                Ești un scout de top de la FanDuel. Analizează acest tabel cu tineri subevaluați:
+                Ești un scout de top. Analizează acest tabel cu tineri subevaluați:
                 {tabel_text}
                 Generează un raport scurt (max 3 paragrafe) în limba română. Scoate în evidență jucătorii cu cel mai bun raport Calitate/Preț și oferă un sfat pentru utilizatorii de Fantasy Sports.
                 """
@@ -82,7 +82,7 @@ with tab2:
             with st.spinner("AI-ul analizează hype-ul comunității..."):
                 tabel_text = hype_df.to_markdown(index=False)
                 prompt = f"""
-                Ești un analist de marketing sportiv la FanDuel. Analizează această corelație între vizualizări (Hits) și salarii (Wage):
+                Ești un analist de marketing sportiv. Analizează această corelație între vizualizări (Hits) și salarii (Wage):
                 {tabel_text}
                 Generează un raport scurt (max 3 paragrafe) în limba română. Explică dacă jucătorii foarte căutați își justifică salariul sau dacă sunt doar supraevaluați (hype comercial), oferind un insight pentru piața de pariuri.
                 """
@@ -114,7 +114,7 @@ with tab3:
             with st.spinner("AI-ul analizează veteranii..."):
                 tabel_text = bargain_df.to_markdown(index=False)
                 prompt = f"""
-                Ești un manager sportiv axat pe eficientizarea bugetelor la FanDuel. Analizează acest tabel cu veterani valoroși:
+                Ești un manager sportiv axat pe eficientizarea bugetelor. Analizează acest tabel cu veterani valoroși:
                 {tabel_text}
                 Generează un raport scurt (max 3 paragrafe) în limba română. Explică de ce acești jucători experimentați reprezintă oportunități pe termen scurt, în ciuda vârstei, și cum poate profita un parior de pe urma lor.
                 """
@@ -147,7 +147,7 @@ with tab4:
             with st.spinner("AI-ul analizează cluburile..."):
                 tabel_text = team_df.to_markdown(index=False)
                 prompt = f"""
-                Ești un analist financiar din lumea fotbalului și lucrezi pentru FanDuel. Analizează acest tabel cu top 10 cele mai valoroase echipe:
+                Ești un analist financiar din lumea fotbalului și lucrezi pentru. Analizează acest tabel cu top 10 cele mai valoroase echipe:
                 {tabel_text}
                 Te rog să generezi un raport scurt și dinamic (maximum 3 paragrafe) în limba română în care să analizezi aceste date. 
                 Menționează care este cea mai valoroasă echipă, ce sugerează numărul de jucători raportat la valoare și oferă un insight util pentru pariori.
