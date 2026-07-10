@@ -60,27 +60,12 @@ value = duckdb.query(query_hype_vs_value).to_df()
 bargain = duckdb.query(query_bargain).to_df()
 team_valuation = duckdb.query(query_team_valuation).to_df()
 
-#print("\n🏆 Cei mai talentati tineri subevaluati sunt:")
-#print(gems)
-
-#print("\nCei mai populari jucatori sunt:")
-#print(value)
-
-#print("\n Cei mai avantajosi jucatori batrani cu release clause mic sunt: ")
-#print(bargain)
-
-print("\nCele mai valoroase echipe sunt:")
-print(team_valuation)
 
 
-import g4f  # Importăm librăria pentru LLM gratuit
+import g4f  
 
-print("\n🤖 Trimitem datele către LLM pentru analiză automată...")
-
-# 1. Convertim tabelul nostru de top echipe într-un format text pe care AI-ul să îl înțeleagă ușor (Markdown)
 tabel_echipe_text = team_valuation.to_markdown(index=False)
 
-# 2. Construim Prompt-ul (instrucțiunile pentru AI)
 prompt = f"""
 Ești un analist financiar de top din lumea fotbalului și lucrezi pentru FanDuel.
 Iată un tabel cu top 10 cele mai valoroase echipe (loturi de jucători) extrase din baza noastră de date:
